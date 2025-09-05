@@ -8,3 +8,6 @@ User can start, stop and reset a stopwatch. Below the stopwatch is shown previou
 I learned:
 - mentality: first make it work, then make it better
 - nothing was particaly new to me, it was just a bigger project with multiple parts
+
+# Project 2: Two dices
+User can roll two dices and gets a combined result.
