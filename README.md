@@ -11,3 +11,7 @@ I learned:
 
 # Project 2: Two dices
 User can roll two dices and gets a combined result.
+
+I learned:
+- I have a hard time to figure out local storage.
+- Used prepend to add list item to the top of the list instead of bottom of the list
