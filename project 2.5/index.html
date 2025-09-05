@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2>LocalStorage - esimerkki</h2>
+    <input id="input" type="text" placeholder="Kirjoita jotain" />
+    <button id="save">Tallenna</button>
+    <button id="clear">Tyhjennä</button>
+
+    <h3>Historia</h3>
+    <ul id="history"></ul>
+
+    <script>
+      let historyList = [];
+      let historyDisplay = document.getElementById("history");
+      let saveBtn = document.getElementById("save");
+      let clearBtn = document.getElementById("clear");
+      let input = document.getElementById("input");
+
+      // Kun käyttäjä painaa "Tallenna"
+      saveBtn.addEventListener("click", () => {
+        let text = input.value;
+        if (text.trim() === "") return; // tyhjää ei tallenneta
+
+        historyList.push(text);
+        saveHistory();
+        renderHistoryItem(text);
+        input.value = "";
+      });
+
+      // Kun käyttäjä painaa "Tyhjennä"
+      clearBtn.addEventListener("click", () => {
+        historyList = [];
+        historyDisplay.textContent = "";
+        saveHistory();
+      });
+
+      function saveHistory() {
+        localStorage.setItem("myHistory", JSON.stringify(historyList));
+      }
+
+      function loadHistory() {
+        const saved = localStorage.getItem("myHistory");
+        if (saved) {
+          historyList = JSON.parse(saved);
+          historyList.forEach((item) => renderHistoryItem(item));
+        }
+      }
+
+      function renderHistoryItem(text) {
+        let li = document.createElement("li");
+        li.textContent = text;
+        historyDisplay.appendChild(li);
+      }
+
+      // Lataa sivun avautuessa vanhat tiedot
+      window.addEventListener("load", loadHistory);
+    </script>
+  </body>
+</html>
