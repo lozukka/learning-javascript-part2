@@ -17,12 +17,11 @@ rollBtn.addEventListener("click", (event)=>{
     //count together
     //show result->save result
     console.log(computerDice1, computerDice2, result);
-    showResult(computerDice1, computerDice2, result);
+    showResult({computerDice1, computerDice2, result});
     
-dice1.textContent=computerDice1;
-dice2.textContent=computerDice2;
 //totalResult.textContent="Hurray";
 //history.textContent="very first roll";
+writeHistory();
 })
 
 resetBtn.addEventListener("click", (event)=>{
@@ -36,16 +35,18 @@ resetBtn.addEventListener("click", (event)=>{
 //Helper functions
 //----------------
 
-function showResult(computerDice1, computerDice2, result){
+function showResult({computerDice1, computerDice2, result}){
     renderHistory({computerDice1, computerDice2, result});
     historyList.push({computerDice1, computerDice2, result});
     saveHistory();
+    dice1.textContent=computerDice1;
+    dice2.textContent=computerDice2;
     resultDisplay.textContent = result;
 }
 function saveHistory(){
-    localStorage.setItem("rolls", JSON.stringify(history));
+    localStorage.setItem("rolls", JSON.stringify(historyList));
 }
-function renderHistory(computerDice1, computerDice2, result){
+function renderHistory({computerDice1, computerDice2, result}){
 let li = document.createElement("li")
 li.textContent = `Dice 1: ${computerDice1} Dice 2: ${computerDice2} and total: ${result}`;
 historyDisplay.prepend(li)
@@ -53,9 +54,10 @@ historyDisplay.prepend(li)
 function loadHistory() {
   const saved = localStorage.getItem("rolls");
   if (saved) {
-    history = JSON.parse(saved);
-    history.forEach((roll) => renderHistory(computerDice1, computerDice2, result));
+    historyList = JSON.parse(saved);
+    historyList.forEach((roll) => renderHistory({computerDice1, computerDice2, result}));
   }
 }
+
 //load history
 window.addEventListener("load", loadHistory);
