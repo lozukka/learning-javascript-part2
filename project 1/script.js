@@ -8,6 +8,7 @@ let resetBtn = document.getElementById("reset");
 let historyDisplay = document.getElementById("history");
 let resetHistoryBtn = document.getElementById("resethistory");
 let interval;
+let history = [];
 
 startBtn.addEventListener("click", (event) => {
   clearInterval(interval);
@@ -16,42 +17,59 @@ startBtn.addEventListener("click", (event) => {
 
 function startTimer() {
   tens++;
-  if (tens <= 9) {
-    tensDisplay.innerHTML = "0" + tens;
-  }
-  if (tens > 9) {
-    tensDisplay.innerHTML = tens;
-  }
   if (tens > 99) {
     seconds++;
-    secondsDisplay.innerHTML = "0" + seconds;
     tens = 0;
-    tensDisplay.innerHTML = "0" + 0;
   }
-  if (seconds > 9) {
-    secondsDisplay.innerHTML = seconds;
-  }
+  secondsDisplay.textContent = format(seconds);
+  tensDisplay.textContent = format(tens);
 }
 
 stopBtn.addEventListener("click", (event) => {
-  let li = document.createElement("li");
-  li.textContent =
-    document.getElementById("seconds").textContent +
-    ":" +
-    document.getElementById("tens").textContent;
-  historyDisplay.appendChild(li);
-
   clearInterval(interval);
+  writeHistory();
 });
+
+function writeHistory() {
+  const time = format(seconds) + ":" + format(tens);
+  renderHistory(time);
+  history.push(time);  
+  saveHistory();        
+}
+function format(num) {
+  return num < 10 ? "0" + num : num;
+}
+
+function saveHistory() {
+  localStorage.setItem("times", JSON.stringify(history));
+}
 
 resetBtn.addEventListener("click", (event) => {
   clearInterval(interval);
-  tensDisplay.innerHTML = "00";
+  tensDisplay.textContent = "00";
   tens = 0;
-  secondsDisplay.innerHTML = "00";
+  secondsDisplay.textContent = "00";
   seconds = 0;
 });
 
-resetHistoryBtn.addEventListener("click", (event) => {
+resetHistoryBtn.addEventListener("click", () => {
+  history = [];
   historyDisplay.textContent = "";
+  saveHistory(); 
 });
+
+function loadHistory() {
+  const saved = localStorage.getItem("times");
+  if (saved) {
+    history = JSON.parse(saved);
+    history.forEach((time) => renderHistory(time));
+  }
+}
+
+function renderHistory(time) {
+  let li = document.createElement("li");
+  li.textContent = time;
+  historyDisplay.prepend(li);
+}
+
+window.addEventListener("load", loadHistory);
