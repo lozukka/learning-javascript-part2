@@ -21,28 +21,28 @@
         let text = input.value;
         if (text.trim() === "") return; // tyhjää ei tallenneta
 
-        historyList.push(text);
-        saveHistory();
-        renderHistoryItem(text);
+        historyList.push(text); //tieto pusketaan dataan
+        saveHistory(); //tieto tallennetaan storageen
+        renderHistoryItem(text); //tieto tulostetaan sivulle
         input.value = "";
       });
 
       // Kun käyttäjä painaa "Tyhjennä"
       clearBtn.addEventListener("click", () => {
-        historyList = [];
-        historyDisplay.textContent = "";
-        saveHistory();
+        historyList = []; //data tyhjätään
+        historyDisplay.textContent = ""; //tiedot tyhjätään sivulta
+        saveHistory(); //tallennetaan storageen tyhjä tieto
       });
 
       function saveHistory() {
-        localStorage.setItem("myHistory", JSON.stringify(historyList));
+        localStorage.setItem("myHistory", JSON.stringify(historyList)); //tieto tallennetaan JSON string muodossa
       }
 
       function loadHistory() {
         const saved = localStorage.getItem("myHistory");
         if (saved) {
-          historyList = JSON.parse(saved);
-          historyList.forEach((item) => renderHistoryItem(item));
+          historyList = JSON.parse(saved); //JSON string muoto puretaan
+          historyList.forEach((item) => renderHistoryItem(item)); //jokainen itemi tulostetaan sivulle kerrallaan
         }
       }
 
