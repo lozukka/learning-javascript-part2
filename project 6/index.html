@@ -17,28 +17,18 @@
     <header><h1>Money converter</h1></header>
     <main>
         <form>
-            <label for="userinput">Amount: <input type="number" id="userinput" name="userinput"></label>
-            <label for="currency"> From:
-            <select name="currency" id="currency">
-                <option value="EUR">Euro</option>
-                <option value="USD">US Dollar</option>
-                <option value="GBP">British pounds</option>
-                <option value="JPY">Japanese yens</option>
-                <option value="SEK">Swedish krona</option>
+            <label for="userinput">Amount of euros: <input type="number" id="userinput" name="userinput"></label>
             </select>
             <button id="submit">Convert</button>
             </label>
         </form>
+        <p id="warning"></p>
         <section>
             <table id="resulttable">
-                <tr>
-                    <th>euro</th>
-                    <th>some</th>
-                </tr>
-                <tr>
-                    <td>some</td>
-                    <td>some</td>
-                </tr>
+                <tr><th>USD</th>
+                <th>GBP</th>
+                <th>JPY</th>
+                <th>SEK</th></tr>
             </table>
         </section>
     </main>

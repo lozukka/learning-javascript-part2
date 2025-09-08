@@ -1,37 +1,35 @@
-console.log("hello")
 let resultTable = document.getElementById("resulttable");
-
+let warningMessage = document.getElementById("warning");
 let submitBtn = document.getElementById("submit");
 
 const rates = {
-  EUR: 1,      // Euro
   USD: 1.08,   // Yhdysvaltain dollari
   GBP: 0.86,   // Englannin punta
   JPY: 158.5,  // Japanin jeni
   SEK: 11.25   // Ruotsin kruunu
 };
 
-const select = document.getElementById("currency");
-
 submitBtn.addEventListener("click", (event) => {
     event.preventDefault();
-  const selectedCurrency = select.value;       // esim. "USD"
-  const rate = rates[selectedCurrency];              // esim. 1.08
-  console.log(`Valittu: ${selectedCurrency}, kerroin: ${rate}`);
+    let userInput = document.getElementById("userinput").value;
+    if(validateUserInput(userInput)){
+        renderResults(userInput);
+    }else {
+        warningMessage.textContent = `Use a positive number, thank you!`;
+    }
+    
 });
 
-/*
-submit.addEventListener("click", (event)=>{
-    event.preventDefault();
-    let userInput = Number(document.getElementById("userinput").value);
-    let selectedValue = document.getElementById("currency").value;
-    
-  const selectedCurrency = event.target.value;       // esim. "USD"
-  const rate = rates[selectedCurrency];              // esim. 1.08
-  console.log(`Valittu: ${selectedCurrency}, kerroin: ${rate}`);
-    let result = userInput * rates.selectedValue;
-    console.log(userInput, selectedValue, result);
-})*/
-
-
-
+function validateUserInput(userInput){
+    return !isNaN(userInput) && userInput > 0;
+}
+function renderResults(userInput){
+    let tr = document.createElement("tr");
+    for(const [currency, rate] of Object.entries(rates)){
+        let td = document.createElement("td");
+        let result = userInput * rate;
+        td.textContent = `${result.toFixed(2)}`
+        tr.appendChild(td);
+    };
+    resultTable.appendChild(tr);
+}

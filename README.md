@@ -37,3 +37,8 @@ On the page is a box that changes color. User can stop and continue with the col
 
 I learned:
 - state machine -model
+
+# Project 6: Currency convertor
+User can give an amount of euros that they want to convert to other currencies.
+
+I feel like this project have repeative structures. I know that that is kind of normal with certain things. When you know the basics, you can do more complicate things with those basics.
