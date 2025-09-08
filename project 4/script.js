@@ -1,6 +1,6 @@
 let slides = document.getElementsByClassName("mySlides");
 let dots = document.getElementsByClassName("dot");
-    let slideNumber = document.getElementById("numbertext");
+let slideNumber = document.getElementById("numbertext");
 let slideIndex = 1;
 showSlide();
 updateDots();
