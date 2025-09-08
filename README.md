@@ -19,9 +19,17 @@ I learned:
 # Project 2.5
 Just a very simple and basic local storage structure. 
 
-# Project 3: Image slider
+# Project 3: FAQ accordion
+User can click questions, and then that answer is shown. Other answers are hidden.
+
+I learned:
+- refreash project about classList.toggle
+
+# Project 4: Image slider
 User can click buttons: next or previous, and then the image change.
 
 I learned: 
 - I learned to use index-numbers
 - The main logic flow was a little difficult to figure out, but it slowly was coming together.
+
+# Project 5: Traffic light
