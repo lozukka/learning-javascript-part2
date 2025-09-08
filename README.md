@@ -33,3 +33,7 @@ I learned:
 - The main logic flow was a little difficult to figure out, but it slowly was coming together.
 
 # Project 5: Traffic light
+On the page is a box that changes color. User can stop and continue with the color changes.
+
+I learned:
+- state machine -model
