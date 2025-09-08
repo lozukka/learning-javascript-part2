@@ -9,6 +9,7 @@
         .light{
             width: 150px;
             height: 150px;
+            border: 1px solid black;
         }
         .green{
             background: green;
@@ -23,8 +24,10 @@
 </head>
 <body>
     <header><h1>Traffic light</h1></header>
+    <button onclick="startTimer()">Start</button>
+    <button onclick="stopTimer()">Stop</button>
     <main>
-        <div class="light green"></div>
+        <div class="light"></div>
     </main>
     <footer><p>2025 learning Javascript</p></footer>
 </body>
