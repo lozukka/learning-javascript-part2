@@ -1,7 +1,7 @@
 console.log("hello")
 let resultTable = document.getElementById("resulttable");
 
-let submit = document.getElementById("submit");
+let submitBtn = document.getElementById("submit");
 
 const rates = {
   EUR: 1,      // Euro
@@ -13,8 +13,9 @@ const rates = {
 
 const select = document.getElementById("currency");
 
-select.addEventListener("change", (event) => {
-  const selectedCurrency = event.target.value;       // esim. "USD"
+submitBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+  const selectedCurrency = select.value;       // esim. "USD"
   const rate = rates[selectedCurrency];              // esim. 1.08
   console.log(`Valittu: ${selectedCurrency}, kerroin: ${rate}`);
 });
