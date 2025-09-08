@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 6</title>
+    <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        table, th, td{
+            border: 1px solid black;
+            border-spacing: 0;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <header><h1>Money converter</h1></header>
+    <main>
+        <form>
+            <label for="userinput">Amount: <input type="number" id="userinput" name="userinput"></label>
+            <label for="currency"> From:
+            <select name="currency" id="currency">
+                <option value="EUR">Euro</option>
+                <option value="USD">US Dollar</option>
+                <option value="GBP">British pounds</option>
+                <option value="JPY">Japanese yens</option>
+                <option value="SEK">Swedish krona</option>
+            </select>
+            <button id="submit">Convert</button>
+            </label>
+        </form>
+        <section>
+            <table id="resulttable">
+                <tr>
+                    <th>euro</th>
+                    <th>some</th>
+                </tr>
+                <tr>
+                    <td>some</td>
+                    <td>some</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <footer><p>2025 learning javascript</p></footer>
+    
+</body>
+<script src="script.js" defer></script>
+</html>
