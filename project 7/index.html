@@ -5,10 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 7</title>
     <link rel="icon" href="../favicon-32x32.png">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header><h1>Notes app</h1></header>
-    <main></main>
+    <main>
+        <section id="create-note">
+            <form id="note">
+                <label for="note-heading">Title <input type="text" id="note-heading"></label>
+                <label for="note-text">Text<textarea name="note-text" id="note-text"></textarea></label>
+                <button id="save-note">Save</button>
+            </form>
+        </section>
+        <section id="saved-notes">
+            <div class="saved-note">
+                <div class="saved-note-heading"><h2>heading</h2>
+                <a><img src="./icons/edit_square_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" height="24" width="24" alt=""></a>
+                <a><img src="./icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg" height="24" width="24" alt=""></a>
+           </div>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis odio fuga expedita neque nobis. Deserunt vero aliquid illo eligendi modi, eaque ullam reprehenderit commodi inventore quo consectetur magni tenetur eos!</p>
+                 </div>
+        </section>
+    </main>
     <footer><p>2025 learning javascript</p></footer>
 </body>
 <script src="script.js" defer></script>
