@@ -5,6 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 4</title>
     <link rel="icon" href="../favicon-32x32.png">
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        #imageslider{
+            position: relative;
+            margin: auto;
+            max-width: 100%;
+        }
+        .mySlides{
+            display: none;
+        }
+        #dotcontainer{
+            display: flex;
+            gap: 10px;
+        }
+        .dot{
+            width: 20px;
+            height: 20px;
+            background: lightgray;
+            border-radius: 50%;
+        }
+        .dot:hover, .active{
+            background: gray;
+        }
+    </style>
 </head>
 <body>
     <header><h1>Images!</h1></header>
@@ -30,7 +56,7 @@
             <p>Fourth image text</p>
         </div>
         </div>
-    <div>
+    <div id="dotcontainer">
         <div class="dot"></div>
         <div class="dot"></div>
         <div class="dot"></div>
