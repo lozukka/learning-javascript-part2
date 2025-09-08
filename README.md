@@ -42,3 +42,13 @@ I learned:
 User can give an amount of euros that they want to convert to other currencies.
 
 I feel like this project have repeative structures. I know that that is kind of normal with certain things. When you know the basics, you can do more complicate things with those basics.
+
+# Project 7: Notes app
+User can create, read, update and delete notes. This is also using local storage to save those notes.
+
+I learned:
+- CRUD stands for:
+    C: Create
+    R: Read
+    U: Update
+    D: Delete
