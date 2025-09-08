@@ -15,3 +15,13 @@ User can roll two dices and gets a combined result.
 I learned:
 - I have a hard time to figure out local storage.
 - Used prepend to add list item to the top of the list instead of bottom of the list
+
+# Project 2.5
+Just a very simple and basic local storage structure. 
+
+# Project 3: Image slider
+User can click buttons: next or previous, and then the image change.
+
+I learned: 
+- I learned to use index-numbers
+- The main logic flow was a little difficult to figure out, but it slowly was coming together.
