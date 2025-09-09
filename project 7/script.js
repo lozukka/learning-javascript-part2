@@ -12,16 +12,22 @@ let warningText = document.getElementById("warning");
 //main function
 //----------------
 //eventlistener->fetch userinput->validate note
-//save note local
-//render note
+
 saveBtn.addEventListener("click", (event)=>{
     event.preventDefault();
+
+    let heading = noteHeading.value.trim();
+    if (heading === "") {
+        warningText.textContent="Title is required!";
+        return;
+    }
+    
     let note = {
     id: Date.now(),
     heading: noteHeading.value,
     text: noteText.value
-};
-    //let note = noteText.value;
+        };
+
     console.log(note);
     notes.push(note);
     saveNotes();
@@ -35,7 +41,7 @@ saveBtn.addEventListener("click", (event)=>{
 //-----------------
 //fetch user input
 //validate note
-//function validateUserInput(){}
+
 //save note to local
 function saveNotes() {
         localStorage.setItem("myNotes", JSON.stringify(notes)); 
@@ -62,10 +68,8 @@ function renderNotesDisplay(note) {
     editIcon.addEventListener("click", () => {
     noteHeading.value = note.heading;
     noteText.value = note.text;
-    // Poista DOM:sta
+    
     div.remove();
-
-    // Poista notes-arraysta
     notes = notes.filter(n => n.id !== note.id);
     });
 
@@ -76,13 +80,8 @@ function renderNotesDisplay(note) {
     deleteIcon.classList.add("delete-note");
 
     deleteIcon.addEventListener("click", () => {
-    // Poista DOM:sta
     div.remove();
-
-    // Poista notes-arraysta
     notes = notes.filter(n => n.id !== note.id);
-
-    // Päivitä localStorage
     saveNotes();
     });
 
@@ -96,10 +95,6 @@ function renderNotesDisplay(note) {
     div.appendChild(p);
     notesDisplay.appendChild(div);
 }
-
-//edit the note
-
-//delete the note
 
 //render notes when refreash page
 window.addEventListener("load", loadNotes);

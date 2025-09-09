@@ -41,6 +41,7 @@ main{
     display: flex;
     flex-direction: column;
     width: 50vh;
+    gap: 20px;
 }
 #saved-notes img{
     cursor: pointer;
