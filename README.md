@@ -52,3 +52,7 @@ I learned:
     R: Read
     U: Update
     D: Delete
+- manage to do a local storage that worked!
+- I added also CSS
+- added images with js
+- this felt a little bigger project but I also managed it
