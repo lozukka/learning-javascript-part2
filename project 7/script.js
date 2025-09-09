@@ -16,12 +16,17 @@ let warningText = document.getElementById("warning");
 //render note
 saveBtn.addEventListener("click", (event)=>{
     event.preventDefault();
-    let note = {noteHeading, noteText}
+    let note = {
+    id: Date.now(),
+    heading: noteHeading.value,
+    text: noteText.value
+};
     //let note = noteText.value;
     console.log(note);
     notes.push(note);
     saveNotes();
     renderNotesDisplay(note);
+    noteHeading.value = "";
     noteText.value = "";
 })
 
@@ -35,12 +40,63 @@ saveBtn.addEventListener("click", (event)=>{
 function saveNotes() {
         localStorage.setItem("myNotes", JSON.stringify(notes)); 
       }
+
 //render notes
 function renderNotesDisplay(note) {
-        let li = document.createElement("li");
-        li.textContent = note;
-        notesDisplay.appendChild(li);
-      }
+    let div = document.createElement("div");
+    div.classList.add("saved-note");
+    div.dataset.id = note.id;
+
+    let divHeading = document.createElement("div");
+    divHeading.classList.add("saved-note-heading");
+
+    let h2 = document.createElement("h2");
+    h2.textContent = note.heading;
+
+    //edit icon
+    let editIcon = document.createElement("img");
+    editIcon.src = "./icons/edit_square_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"; 
+    editIcon.alt = "Edit";
+    editIcon.classList.add("edit-note");
+
+    editIcon.addEventListener("click", () => {
+    noteHeading.value = note.heading;
+    noteText.value = note.text;
+    // Poista DOM:sta
+    div.remove();
+
+    // Poista notes-arraysta
+    notes = notes.filter(n => n.id !== note.id);
+    });
+
+    //delete icon
+    let deleteIcon = document.createElement("img");
+    deleteIcon.src = "./icons/delete_24dp_000000_FILL0_wght400_GRAD0_opsz24.svg"; 
+    deleteIcon.alt = "Delete";
+    deleteIcon.classList.add("delete-note");
+
+    deleteIcon.addEventListener("click", () => {
+    // Poista DOM:sta
+    div.remove();
+
+    // Poista notes-arraysta
+    notes = notes.filter(n => n.id !== note.id);
+
+    // Päivitä localStorage
+    saveNotes();
+    });
+
+    let p = document.createElement("p");
+    p.textContent = note.text;
+
+    divHeading.appendChild(h2);
+    divHeading.appendChild(editIcon);
+    divHeading.appendChild(deleteIcon);
+    div.appendChild(divHeading);
+    div.appendChild(p);
+    notesDisplay.appendChild(div);
+}
+
 //edit the note
 
 //delete the note

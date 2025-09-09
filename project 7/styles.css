@@ -42,7 +42,7 @@ main{
     flex-direction: column;
     width: 50vh;
 }
-#saved-notes a img{
+#saved-notes img{
     cursor: pointer;
     margin: 3px;
 }
