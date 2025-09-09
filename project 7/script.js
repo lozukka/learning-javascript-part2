@@ -4,7 +4,9 @@ let notes = [];
 let notesDisplay = document.getElementById("saved-notes");
 let saveBtn = document.getElementById("save-note");
 let deleteBtn = document.getElementById("delete-note");
+let noteHeading = document.getElementById("note-heading");
 let noteText = document.getElementById("note-text");
+let warningText = document.getElementById("warning");
 
 //----------------
 //main function
@@ -13,10 +15,13 @@ let noteText = document.getElementById("note-text");
 //save note local
 //render note
 saveBtn.addEventListener("click", (event)=>{
-    let text = noteText.value;
-    notes.push(text);
+    event.preventDefault();
+    let note = {noteHeading, noteText}
+    //let note = noteText.value;
+    console.log(note);
+    notes.push(note);
     saveNotes();
-    renderNotesDisplay(text);
+    renderNotesDisplay(note);
     noteText.value = "";
 })
 
@@ -25,14 +30,15 @@ saveBtn.addEventListener("click", (event)=>{
 //-----------------
 //fetch user input
 //validate note
+//function validateUserInput(){}
 //save note to local
 function saveNotes() {
         localStorage.setItem("myNotes", JSON.stringify(notes)); 
       }
 //render notes
-function renderNotesDisplay(text) {
+function renderNotesDisplay(note) {
         let li = document.createElement("li");
-        li.textContent = text;
+        li.textContent = note;
         notesDisplay.appendChild(li);
       }
 //edit the note
