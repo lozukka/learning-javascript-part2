@@ -11,7 +11,6 @@ let warningText = document.getElementById("warning");
 //----------------
 //main function
 //----------------
-//eventlistener->fetch userinput->validate note
 
 saveBtn.addEventListener("click", (event)=>{
     event.preventDefault();
@@ -27,8 +26,6 @@ saveBtn.addEventListener("click", (event)=>{
     heading: noteHeading.value,
     text: noteText.value
         };
-
-    console.log(note);
     notes.push(note);
     saveNotes();
     renderNotesDisplay(note);
@@ -39,15 +36,11 @@ saveBtn.addEventListener("click", (event)=>{
 //-----------------
 //helper functions
 //-----------------
-//fetch user input
-//validate note
 
-//save note to local
 function saveNotes() {
         localStorage.setItem("myNotes", JSON.stringify(notes)); 
       }
 
-//render notes
 function renderNotesDisplay(note) {
     let div = document.createElement("div");
     div.classList.add("saved-note");
@@ -96,7 +89,6 @@ function renderNotesDisplay(note) {
     notesDisplay.appendChild(div);
 }
 
-//render notes when refreash page
 window.addEventListener("load", loadNotes);
 function loadNotes() {
         const saved = localStorage.getItem("myNotes");
