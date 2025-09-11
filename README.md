@@ -2,48 +2,48 @@
 
 More of me learning javascript. I asked ChatGPT to draft me 15 projects based on the first 15 projects.
 
-# Project 1: Stopwatch 2.0
+## Project 1: Stopwatch 2.0
 User can start, stop and reset a stopwatch. Below the stopwatch is shown previous times, newest on top. It is also possible to reset the list. The list uses local storage to save times.
 
 I learned:
 - mentality: first make it work, then make it better
 - nothing was particaly new to me, it was just a bigger project with multiple parts
 
-# Project 2: Two dices
+## Project 2: Two dices
 User can roll two dices and gets a combined result.
 
 I learned:
 - I have a hard time to figure out local storage.
 - Used prepend to add list item to the top of the list instead of bottom of the list
 
-# Project 2.5
+## Project 2.5
 Just a very simple and basic local storage structure. 
 
-# Project 3: FAQ accordion
+## Project 3: FAQ accordion
 User can click questions, and then that answer is shown. Other answers are hidden.
 
 I learned:
 - refreash project about classList.toggle
 
-# Project 4: Image slider
+## Project 4: Image slider
 User can click buttons: next or previous, and then the image change.
 
 I learned: 
 - I learned to use index-numbers
 - The main logic flow was a little difficult to figure out, but it slowly was coming together.
 
-# Project 5: Traffic light
+## Project 5: Traffic light
 On the page is a box that changes color. User can stop and continue with the color changes.
 
 I learned:
 - state machine -model
 
-# Project 6: Currency convertor
+## Project 6: Currency convertor
 User can give an amount of euros that they want to convert to other currencies.
 
 I feel like this project have repeative structures. I know that that is kind of normal with certain things. When you know the basics, you can do more complicate things with those basics.
 
-# Project 7: Notes app
+## Project 7: Notes app
 User can create, read, update and delete notes. This is also using local storage to save those notes.
 
 I learned:
@@ -57,7 +57,7 @@ I learned:
 - added images with js
 - this felt a little bigger project but I also managed it
 
-# Project 8: Random quotes
+## Project 8: Random quotes
 User can click a button and a random quote is shown on the page.
 
 I used ChatGPT to create me a JSON file with 20 random quotes.
@@ -67,12 +67,12 @@ I learned:
 - creating a random index-number was easy
 - I also learned how to add try and error to fetch
 
-# Project 9: Random weather forecast
+## Project 9: Random weather forecast
 User can click a button and a random weather forecast is shown on the page. Even though this is similar project than project 8, I wanted to do this because I wanted to try again fetching from JSON file. 
 
 I got more familiar with fetching data from a JSON file. I used again ChatGPT to do me a JSON file with 20 different forecasts.
 
-# Project 10: A random user generation
+## Project 10: A random user generation
 User can click a button and a random user is shown on page. I used a random user api for this project.
 
 I learned:
