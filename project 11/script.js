@@ -2,7 +2,10 @@ const saveBtn = document.getElementById("save-task");
 
 saveBtn.addEventListener("click", (event)=>{
     event.preventDefault();
+    
     let newTask = document.getElementById("task").value;
+    if (!newTask.trim()) return;
+
     console.log(newTask);
     saveNewTask(newTask);
     renderTask(newTask);
@@ -11,14 +14,20 @@ saveBtn.addEventListener("click", (event)=>{
 })
 
 
-function renderTask(newTask){
-    let ul = document.getElementById("list-of-tasks");
+function renderTask(newTask, id){
+    const ul = document.getElementById("list-of-tasks");
     let li = document.createElement("li");
     let span = document.createElement("span");
     let button = document.createElement("button");
     button.textContent = "Delete";
-    button.addEventListener("click", () => {
+    button.addEventListener("click", async () => {
     li.remove(); // poistaa tehtävän
+    if (id) {
+            await fetch(`https://jsonplaceholder.typicode.com/todos/${id}`, {
+                method: "DELETE"
+            });
+            console.log(`Deleted task with id: ${id}`);
+        }
 });
     span.textContent = newTask;
     li.appendChild(span);
@@ -26,28 +35,28 @@ function renderTask(newTask){
     ul.appendChild(li);
 }
 
-function saveNewTask(newTask){
-    fetch("https://jsonplaceholder.typicode.com/todos", {
-    method: "POST",
-    body: JSON.stringify({
-        title: newTask,
-        completed: false,
-        userId: 1
-    }),
-    headers: {
-        "Content-type": "application/json; charset=UTF-8"
-    }
-})
-.then((response) => response.json())
-.then((json) => console.log("Saved to API:", json));
-
+async function saveNewTask(newTask){
+    const response = await fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "POST",
+        body: JSON.stringify({
+            title: newTask,
+            completed: false,
+            userId: 1
+        }),
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    });
+    const savedTask = await response.json();
+    console.log("Saved to API:", savedTask);
+    
 }
 
 
 async function fetchTasks() {
       const response = await fetch("https://jsonplaceholder.typicode.com/todos?_limit=10");
       const tasks = await response.json();
-      tasks.forEach(task => renderTask(task.title, task.completed));
+      tasks.forEach(task => renderTask(task.title, task.id));
 }
 
 window.addEventListener("load", fetchTasks);
