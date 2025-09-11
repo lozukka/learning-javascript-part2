@@ -66,3 +66,8 @@ I learned:
 - fech from JSON file
 - creating a random index-number was easy
 - I also learned how to add try and error to fetch
+
+# Project 9: Random weather forecast
+User can click a button and a random weather forecast is shown on the page. Even though this is similar project than project 8, I wanted to do this because I wanted to try again fetching from JSON file. 
+
+I got more familiar with fetching data from a JSON file. I used again ChatGPT to do me a JSON file with 20 different forecasts.
