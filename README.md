@@ -79,3 +79,9 @@ I learned:
 - how to find and construct the url for api
 - generating the fetch is becoming a familiar process
 
+# Project 11: To do 2.0
+User can write and save tasks. They can also delete those tasks. The tasks are saved in JSON database.
+I used JSONplaceholder to mimic the fetch API.
+
+I learned: 
+- GET, POST and DELETE methods when using fetch
