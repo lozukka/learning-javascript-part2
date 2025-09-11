@@ -56,3 +56,13 @@ I learned:
 - I added also CSS
 - added images with js
 - this felt a little bigger project but I also managed it
+
+# Project 8: Random quotes
+User can click a button and a random quote is shown on the page.
+
+I used ChatGPT to create me a JSON file with 20 random quotes.
+
+I learned:
+- fech from JSON file
+- creating a random index-number was easy
+- I also learned how to add try and error to fetch
