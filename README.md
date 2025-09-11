@@ -72,9 +72,10 @@ User can click a button and a random weather forecast is shown on the page. Even
 
 I got more familiar with fetching data from a JSON file. I used again ChatGPT to do me a JSON file with 20 different forecasts.
 
-# Project 9: Random weather forecast
+# Project 10: A random user generation
 User can click a button and a random user is shown on page. I used a random user api for this project.
 
 I learned:
 - how to find and construct the url for api
 - generating the fetch is becoming a familiar process
+
