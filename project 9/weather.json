@@ -1,0 +1,24 @@
+{
+  "weatherReports": [
+    { "temperature": 25, "windSpeed": 5, "condition": "Sunny" },
+    { "temperature": 18, "windSpeed": 12, "condition": "Cloudy" },
+    { "temperature": 10, "windSpeed": 20, "condition": "Rain" },
+    { "temperature": 30, "windSpeed": 8, "condition": "Sunny" },
+    { "temperature": 22, "windSpeed": 15, "condition": "Partly Cloudy" },
+    { "temperature": 5, "windSpeed": 10, "condition": "Snow" },
+    { "temperature": -2, "windSpeed": 6, "condition": "Snow" },
+    { "temperature": 16, "windSpeed": 25, "condition": "Thunderstorm" },
+    { "temperature": 12, "windSpeed": 18, "condition": "Rain" },
+    { "temperature": 28, "windSpeed": 7, "condition": "Sunny" },
+    { "temperature": 14, "windSpeed": 30, "condition": "Windy" },
+    { "temperature": 20, "windSpeed": 5, "condition": "Cloudy" },
+    { "temperature": 33, "windSpeed": 10, "condition": "Sunny" },
+    { "temperature": 8, "windSpeed": 12, "condition": "Foggy" },
+    { "temperature": 0, "windSpeed": 20, "condition": "Snow" },
+    { "temperature": 26, "windSpeed": 9, "condition": "Partly Cloudy" },
+    { "temperature": 15, "windSpeed": 14, "condition": "Rain" },
+    { "temperature": 35, "windSpeed": 5, "condition": "Heatwave" },
+    { "temperature": 11, "windSpeed": 22, "condition": "Thunderstorm" },
+    { "temperature": 19, "windSpeed": 8, "condition": "Drizzle" }
+  ]
+}
