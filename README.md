@@ -97,3 +97,4 @@ I learned:
 In the future:
 - could add a reset button
 - could add categories for spendings
+
