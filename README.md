@@ -85,3 +85,15 @@ I used JSONplaceholder to mimic the fetch API.
 
 I learned: 
 - GET, POST and DELETE methods when using fetch
+
+## Project 12: Budget chart
+User can give an amount and select income or spending. Then the chart updates correctly.
+
+I learned:
+- used a library for the first time
+- also felt a little lazy and did everything in HTML-file
+- get this project pretty basic
+
+In the future:
+- could add a reset button
+- could add categories for spendings
